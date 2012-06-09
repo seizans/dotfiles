@@ -1,8 +1,12 @@
 syntax on
+filetype on
+filetype plugin on
 set number
 set title
 set ruler
 set nobackup
-filetype on
-filetype plugin on
+set noswapfile
+set expandtab
 set tabstop=4
+set cursorline
+highlight cursorline term=none cterm=none ctermbg=darkblue
