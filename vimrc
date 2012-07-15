@@ -1,3 +1,14 @@
+set nocompatible
+filetype off
+if has('vim_starting')
+  set runtimepath+=~/dotfiles/neobundle.vim
+  call neobundle#rc(expand('~/.bundle'))
+endif
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'eagletmt/ghcmod-vim'
+
+nnoremap <Nul> :GhcModType<Return>
+
 syntax on
 filetype on
 filetype plugin on
