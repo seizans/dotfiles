@@ -69,12 +69,11 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax on
-filetype on
-filetype plugin on
 set title
 set ruler
 set expandtab
 set tabstop=4
+set shiftwidth=4
 set cursorline
 colorscheme hybrid
 
