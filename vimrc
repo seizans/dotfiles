@@ -77,6 +77,15 @@ set shiftwidth=4
 set cursorline
 colorscheme hybrid
 
+" Macの場合はVisualMode時に C-c と C-v でコピー、ペーストできるように
+let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
+if s:is_mac
+    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+    nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
+endif
+
+"nnoremap O :<C-u>call append(expand('.'), '')<Cr>j "編集モードに入らず改行
+
 set nowritebackup
 set nobackup
 set noswapfile
@@ -87,10 +96,10 @@ set incsearch
 set hlsearch
 
 set list
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 
 set list                " 不可視文字の可視化
-set number              " 行番号の表示
+"set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=80      " その代わり80文字目にラインを入れる
