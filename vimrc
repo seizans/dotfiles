@@ -60,6 +60,9 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'vim-scripts/YankRing.vim'
 
+NeoBundle 'tyru/open-browser.vim'
+nmap gW <Plug>(openbrowser-open)
+
 "For colorschema
 NeoBundle 'w0ng/vim-hybrid'
 
