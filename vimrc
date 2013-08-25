@@ -57,8 +57,8 @@ NeoBundle 'hynek/vim-python-pep8-indent', {
       \ }}
 
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/YankRing.vim'
+"NeoBundle 'vim-scripts/Align'
+"NeoBundle 'vim-scripts/YankRing.vim'
 
 NeoBundle 'tyru/open-browser.vim'
 nmap gW <Plug>(openbrowser-open)
@@ -128,3 +128,8 @@ nnoremap g# g#zz
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
+
+" rstの下線を適切な長さで引く: visual mode で <space># と押下する
+nnoremap <silent> <space># yyp<c-v>$r#
+nnoremap <silent> <space>= yyp<c-v>$r=
+nnoremap <silent> <space>- yyp<c-v>$r-
