@@ -1,0 +1,22 @@
+[user]
+    name = Seizan Shimazaki
+    email = seizans@gmail.com
+[color]
+    diff = auto
+    grep = auto
+    status = auto
+    branch = auto
+    interactive = auto
+[core]
+    editor = vim
+[alias]
+    ci = commit
+    st = status
+    br = branch
+    co = checkout
+[merge]
+    ff = false
+[pull]
+    rebase = true
+[http]
+    sslVerify = false
