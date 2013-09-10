@@ -1,4 +1,4 @@
-ipython
-pep8
-pyflakes
 flake8
+httpie
+ipython
+watchdog
