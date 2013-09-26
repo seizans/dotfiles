@@ -21,6 +21,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checker='flake8'
+let g:syntastic_python_flake8_args = '--ignore="E501"'
 
 NeoBundle 'jmcantrell/vim-virtualenv', {
       \ "autoload": {
