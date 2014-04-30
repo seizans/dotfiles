@@ -111,6 +111,7 @@ set hlsearch
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 
+set visualbell t_vb=    " ビープ音を無効化する
 set list                " 不可視文字の可視化
 "set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
