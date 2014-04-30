@@ -21,7 +21,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args = '--ignore=E302 --max-line-length=120'
+let g:syntastic_python_flake8_args = '--max-line-length=120'
 
 NeoBundle 'jmcantrell/vim-virtualenv', {
       \ "autoload": {
@@ -57,6 +57,16 @@ NeoBundle 'hynek/vim-python-pep8-indent', {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
 
+" Golang
+set rtp+=$GOROOT/misc/vim
+set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+NeoBundle 'tpope/vim-pathogen'
+execute pathogen#infect()
+let g:syntastic_go_checkers = ['go', 'golint']
+
 NeoBundle 'tpope/vim-surround'
 "NeoBundle 'vim-scripts/Align'
 "NeoBundle 'vim-scripts/YankRing.vim'
@@ -88,8 +98,6 @@ if s:is_mac
     nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
 endif
 
-"nnoremap O :<C-u>call append(expand('.'), '')<Cr>j "編集モードに入らず改行
-
 set nowritebackup
 set nobackup
 set noswapfile
@@ -106,11 +114,7 @@ set list                " 不可視文字の可視化
 "set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
-set colorcolumn=80      " その代わり80文字目にラインを入れる
-
-" 前時代的スクリーンベルを無効化
-set t_vb=
-set novisualbell
+set colorcolumn=120      " その代わり120文字目にラインを入れる
 
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
