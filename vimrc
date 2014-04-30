@@ -86,6 +86,7 @@ syntax on
 set title
 set ruler
 set expandtab
+autocmd! FileType go setlocal noexpandtab
 set tabstop=4
 set shiftwidth=4
 set cursorline
