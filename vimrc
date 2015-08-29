@@ -13,8 +13,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "Base
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
 \     'mac' : 'make -f make_mac.mak',
 \     'linux' : 'make',
 \     'unix' : 'gmake',
@@ -29,10 +27,13 @@ NeoBundle 'vim-erlang/vim-erlang-compiler'
 
 NeoBundle 'vim-erlang/vim-erlang-tags'
 set tags+=.git/tags,tags
-let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git']
 let g:rooter_use_lcd = 1
 "autocmd BufEnter * :Rooter
+" erlファイルをerlangとして認識する
+au BufNewFile,BufRead *.erl setf erlang
+au FileType erlang setlocal errorformat=%f:%l:\ %m
+" オムニ補完を<C-f>で
+imap <C-f> <C-x><C-o>
 
 "Haskell
 "These are for ghc-mod.
