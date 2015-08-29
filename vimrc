@@ -1,17 +1,37 @@
-set nocompatible
+"NeoBundle
 if has('vim_starting')
+  if &compatible
+    set nocompatible  " Be iMproved
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
+
+
+"Base
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+NeoBundle 'Shougo/neocomplete.vim'
+
+"Erlang
+NeoBundle 'vim-erlang/vim-erlang-runtime'
+NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+NeoBundle 'vim-erlang/vim-erlang-tags'
+NeoBundle 'vim-erlang/vim-erlang-compiler'
 
 "These are for ghc-mod.
-NeoBundle 'Shougo/vimproc'
 "NeoBundle 'eagletmt/ghcmod-vim'
 
 "These are for neco-ghc.
-NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'ujihisa/neco-ghc'
 "autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 "let g:neocomplcache_enable_at_startup = 1
@@ -64,8 +84,9 @@ set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-NeoBundle 'tpope/vim-pathogen'
-execute pathogen#infect()
+" エラー出るのでとりあえずコメントアウト
+"NeoBundle 'tpope/vim-pathogen'
+"execute pathogen#infect()
 let g:syntastic_go_checkers = ['go', 'golint']
 
 NeoBundle 'tpope/vim-surround'
@@ -80,8 +101,10 @@ NeoBundle 'w0ng/vim-hybrid'
 
 "nnoremap <Nul> :GhcModType<Return>
 
+call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
+
 
 syntax on
 set title
