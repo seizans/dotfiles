@@ -19,6 +19,22 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/unite.vim'
+
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_check_on_open=1
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args = '--max-line-length=120'
+
+"For colorschema
+NeoBundle 'w0ng/vim-hybrid'
+
+NeoBundle 'tpope/vim-surround'
+"NeoBundle 'vim-scripts/Align'
+"NeoBundle 'vim-scripts/YankRing.vim'
+
+"NeoBundle 'tyru/open-browser.vim'
+"nmap gW <Plug>(openbrowser-open)
 
 "Erlang
 NeoBundle 'vim-erlang/vim-erlang-runtime'
@@ -38,19 +54,12 @@ imap <C-f> <C-x><C-o>
 "Haskell
 "These are for ghc-mod.
 "NeoBundle 'eagletmt/ghcmod-vim'
-
 "These are for neco-ghc.
 "NeoBundle 'ujihisa/neco-ghc'
 "autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 "let g:neocomplcache_enable_at_startup = 1
-
-NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'eagletmt/unite-haddock'
-
-NeoBundle 'scrooloose/syntastic'
-let g:syntastic_check_on_open=1
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args = '--max-line-length=120'
+"nnoremap <Nul> :GhcModType<Return>
 
 NeoBundle 'jmcantrell/vim-virtualenv', {
       \ "autoload": {
@@ -61,14 +70,14 @@ NeoBundle 'lambdalisue/vim-django-support', {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
 "NeoBundle "davidhalter/jedi-vim", {
-      "\ "autoload": {
-      "\   "filetypes": ["python", "python3", "djangohtml"],
-      "\  }}
-      "\ },
-      "\ "build": {
-      "\   "mac": "pip install jedi",
-      "\   "unix": "pip install jedi",
-      "\ }}
+"      \ "autoload": {
+"      \   "filetypes": ["python", "python3", "djangohtml"],
+"      \  }}
+"      \ },
+"      \ "build": {
+"      \   "mac": "pip install jedi",
+"      \   "unix": "pip install jedi",
+"      \ }}
 "let s:hooks = neobundle#get_hooks("jedi-vim")
 "function! s:hooks.on_source(bundle)
   " jediにvimの設定を任せると'completeopt+=preview'するので
@@ -87,27 +96,15 @@ NeoBundle 'hynek/vim-python-pep8-indent', {
       \ }}
 
 " Golang
-set rtp+=$GOROOT/misc/vim
-set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+"set rtp+=$GOROOT/misc/vim
+"set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
+"exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+"set completeopt=menu,preview
+"set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 " エラー出るのでとりあえずコメントアウト
 "NeoBundle 'tpope/vim-pathogen'
 "execute pathogen#infect()
-let g:syntastic_go_checkers = ['go', 'golint']
-
-NeoBundle 'tpope/vim-surround'
-"NeoBundle 'vim-scripts/Align'
-"NeoBundle 'vim-scripts/YankRing.vim'
-
-NeoBundle 'tyru/open-browser.vim'
-nmap gW <Plug>(openbrowser-open)
-
-"For colorschema
-NeoBundle 'w0ng/vim-hybrid'
-
-"nnoremap <Nul> :GhcModType<Return>
+"let g:syntastic_go_checkers = ['go', 'golint']
 
 call neobundle#end()
 filetype plugin indent on
@@ -125,11 +122,11 @@ set cursorline
 colorscheme hybrid
 
 " Macの場合はVisualMode時に C-c と C-v でコピー、ペーストできるように
-let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
-if s:is_mac
-    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-    nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
-endif
+"let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
+"if s:is_mac
+"    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+"    nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
+"endif
 
 set nowritebackup
 set nobackup
