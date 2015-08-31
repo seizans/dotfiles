@@ -18,7 +18,20 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
+
 NeoBundle 'Shougo/neocomplete.vim'
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
 NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'scrooloose/syntastic'
@@ -36,6 +49,7 @@ NeoBundle 'tpope/vim-surround'
 "NeoBundle 'tyru/open-browser.vim'
 "nmap gW <Plug>(openbrowser-open)
 
+
 "Erlang
 NeoBundle 'vim-erlang/vim-erlang-runtime'
 NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
@@ -48,8 +62,6 @@ let g:rooter_use_lcd = 1
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
-" オムニ補完を<C-f>で
-imap <C-f> <C-x><C-o>
 
 " Lua
 "NeoBundleLazy 'git@github.com:shiguredo/luli.vim.git', {
@@ -80,6 +92,13 @@ NeoBundle 'lambdalisue/vim-django-support', {
       \ "autoload": {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
+NeoBundle "davidhalter/jedi-vim"
+autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#popup_select_first=0
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:neocomplete#force_omni_input_patterns.python = '\h\w|[^. \t].\w'
+"let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 "NeoBundle "davidhalter/jedi-vim", {
 "      \ "autoload": {
 "      \   "filetypes": ["python", "python3", "djangohtml"],
@@ -160,6 +179,10 @@ set colorcolumn=120      " その代わり120文字目にラインを入れる
 
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
+
+" オムニ補完を<C-f>で
+inoremap <C-f> <C-x><C-o>
+"imap <C-f> <C-x><C-o>
 
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
