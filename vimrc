@@ -51,6 +51,17 @@ au FileType erlang setlocal errorformat=%f:%l:\ %m
 " オムニ補完を<C-f>で
 imap <C-f> <C-x><C-o>
 
+" Lua
+"NeoBundleLazy 'git@github.com:shiguredo/luli.vim.git', {
+"     \ 'autoload': {
+"     \   'filetypes': ['lua']
+"     \ }}
+"NeoBundleLazy 'git@github.com:shiguredo/lunaspot.vim.git', {
+"     \ 'autoload': {
+"     \   'filetypes': ['lua']
+"     \ }}
+"let g:syntastic_lua_checkers = ['luli']
+
 "Haskell
 "These are for ghc-mod.
 "NeoBundle 'eagletmt/ghcmod-vim'
