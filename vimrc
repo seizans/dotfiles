@@ -31,6 +31,19 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplete#enable_camel_case = 1
+" buffer file name pattern that locks neocomplete. e.g. ku.vim or fuzzyfinder
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" This variable controls the number of candidates displayed in a pop-up menu
+let g:neocomplete#max_list = 20
+" Define file-type dependent dictionaries.
+let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ }
 
 NeoBundle 'Shougo/unite.vim'
 
@@ -56,9 +69,11 @@ NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
 NeoBundle 'vim-erlang/vim-erlang-compiler'
 
 NeoBundle 'vim-erlang/vim-erlang-tags'
+
+NeoBundle 'airblade/vim-rooter'
 set tags+=.git/tags,tags
 let g:rooter_use_lcd = 1
-"autocmd BufEnter * :Rooter
+autocmd BufEnter * :Rooter
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
@@ -80,7 +95,6 @@ au FileType erlang setlocal errorformat=%f:%l:\ %m
 "These are for neco-ghc.
 "NeoBundle 'ujihisa/neco-ghc'
 "autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-"let g:neocomplcache_enable_at_startup = 1
 "NeoBundle 'eagletmt/unite-haddock'
 "nnoremap <Nul> :GhcModType<Return>
 
@@ -181,8 +195,8 @@ set colorcolumn=120      " その代わり120文字目にラインを入れる
 inoremap jj <Esc>
 
 " オムニ補完を<C-f>で
-inoremap <C-f> <C-x><C-o>
-"imap <C-f> <C-x><C-o>
+"inoremap <C-f> <C-x><C-o>
+imap <C-f> <C-x><C-o>
 
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
