@@ -72,8 +72,8 @@ NeoBundle 'vim-erlang/vim-erlang-tags'
 
 NeoBundle 'airblade/vim-rooter'
 set tags+=.git/tags,tags
-let g:rooter_use_lcd = 1
-autocmd BufEnter * :Rooter
+let g:rooter_autocmd_patterns = '*.erl'
+let g:rooter_silent_chdir = 1
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
@@ -195,7 +195,6 @@ set colorcolumn=120      " その代わり120文字目にラインを入れる
 inoremap jj <Esc>
 
 " オムニ補完を<C-f>で
-"inoremap <C-f> <C-x><C-o>
 imap <C-f> <C-x><C-o>
 
 " ESCを二回押すことでハイライトを消す
