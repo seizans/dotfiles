@@ -46,6 +46,8 @@ let g:neocomplete#sources#dictionary#dictionaries = {
       \ }
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+let g:vimfiler_as_default_explorer = 1
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
