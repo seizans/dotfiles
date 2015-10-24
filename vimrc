@@ -55,6 +55,7 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args = '--max-line-length=120'
 
 "For colorschema
+NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'tpope/vim-surround'
@@ -104,10 +105,10 @@ NeoBundle 'jmcantrell/vim-virtualenv', {
       \ "autoload": {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
-NeoBundle 'lambdalisue/vim-django-support', {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
+"NeoBundle 'lambdalisue/vim-django-support', {
+"      \ "autoload": {
+"      \   "filetypes": ["python", "python3", "djangohtml"]
+"      \ }}
 NeoBundle "davidhalter/jedi-vim"
 autocmd FileType python setlocal omnifunc=jedi#completions
 "let g:jedi#popup_select_first=0
@@ -115,15 +116,6 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:neocomplete#force_omni_input_patterns.python = '\h\w|[^. \t].\w'
 "let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-"NeoBundle "davidhalter/jedi-vim", {
-"      \ "autoload": {
-"      \   "filetypes": ["python", "python3", "djangohtml"],
-"      \  }}
-"      \ },
-"      \ "build": {
-"      \   "mac": "pip install jedi",
-"      \   "unix": "pip install jedi",
-"      \ }}
 "let s:hooks = neobundle#get_hooks("jedi-vim")
 "function! s:hooks.on_source(bundle)
   " jediにvimの設定を任せると'completeopt+=preview'するので
@@ -165,7 +157,10 @@ autocmd! FileType go setlocal noexpandtab
 set tabstop=4
 set shiftwidth=4
 set cursorline
-colorscheme hybrid
+" hybrid が動かなくなってしまったのでとりあえず jellybeans にしとく
+"set background=dark
+"colorscheme hybrid
+colorscheme jellybeans
 
 " Macの場合はVisualMode時に C-c と C-v でコピー、ペーストできるように
 "let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
