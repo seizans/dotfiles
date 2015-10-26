@@ -157,10 +157,9 @@ autocmd! FileType go setlocal noexpandtab
 set tabstop=4
 set shiftwidth=4
 set cursorline
-" hybrid が動かなくなってしまったのでとりあえず jellybeans にしとく
-"set background=dark
-"colorscheme hybrid
-colorscheme jellybeans
+set background=dark
+colorscheme hybrid
+"colorscheme jellybeans
 
 " Macの場合はVisualMode時に C-c と C-v でコピー、ペーストできるように
 "let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
