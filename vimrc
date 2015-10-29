@@ -187,6 +187,7 @@ set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=120      " その代わり120文字目にラインを入れる
 set backspace=indent,eol,start  " インサートモードに入る前からあった文字を消せる
+set t_Co=256
 
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
