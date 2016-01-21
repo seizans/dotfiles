@@ -22,3 +22,5 @@
     rebase = true
 [http]
     sslVerify = false
+[commit]
+    template = ~/dotfiles/gitmessage.txt

@@ -50,6 +50,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 
 NeoBundle 'scrooloose/syntastic'
+"let g:syntastic_debug = 1
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args = '--max-line-length=120'
