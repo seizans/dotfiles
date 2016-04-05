@@ -24,6 +24,10 @@ if dein#check_install()
   call dein#install()
 endif
 
+" Shougo/deoplete.vim
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#max_list = 20
 
 " 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
