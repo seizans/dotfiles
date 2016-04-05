@@ -24,3 +24,40 @@ on_ft = ['snippet']
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_i = 1
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-runtime'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-omnicomplete'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-compiler'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-tags'
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+    [autoload]
+    filetypes = ['python', 'python3', 'djangohtml']
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent', {
+    [autoload]
+      filetypes = ['python', 'python3', 'djangohtml']
