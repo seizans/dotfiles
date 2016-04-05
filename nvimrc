@@ -47,15 +47,6 @@ let g:rooter_silent_chdir = 1
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
 
-"Haskell
-"These are for ghc-mod.
-"NeoBundle 'eagletmt/ghcmod-vim'
-"These are for neco-ghc.
-"NeoBundle 'ujihisa/neco-ghc'
-"autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-"NeoBundle 'eagletmt/unite-haddock'
-"nnoremap <Nul> :GhcModType<Return>
-
 " "davidhalter/jedi-vim"
 autocmd FileType python setlocal omnifunc=jedi#completions
 "let g:jedi#popup_select_first=0
@@ -73,17 +64,6 @@ let g:jedi#auto_vim_configuration = 0
   " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
   "let g:jedi#goto_command = '<Leader>G'
 "endfunction
-
-" Golang
-"set rtp+=$GOROOT/misc/vim
-"set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
-"exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-"set completeopt=menu,preview
-"set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-" エラー出るのでとりあえずコメントアウト
-"NeoBundle 'tpope/vim-pathogen'
-"execute pathogen#infect()
-"let g:syntastic_go_checkers = ['go', 'golint']
 
 
 filetype plugin indent on
