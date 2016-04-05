@@ -1,6 +1,3 @@
-" ターミナルの true color を使う
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 if &compatible
   set nocompatible
 endif
@@ -12,19 +9,11 @@ execute 'set runtimepath^=' . s:dein_repo_dir
 
 
 call dein#begin(s:dein_dir)
-
 let s:toml = '~/.dein.toml'
 let s:lazy_toml = '~/.dein_lazy.toml'
-
-" 読み込み、キャッシュは :call dein#clear_cache() で消せる
-if dein#load_cache([expand('<sfile>', s:toml, s:lazy_toml)])
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#save_cache()
-endif
-
+call dein#load_toml(s:toml, {'lazy': 0})
+call dein#load_toml(s:lazy_toml, {'lazy': 1})
 call dein#end()
-
 
 " vimprocだけは最初にインストールしてほしい
 if dein#check_install(['vimproc'])
@@ -68,8 +57,6 @@ autocmd FileType python setlocal omnifunc=jedi#completions
 "let g:jedi#popup_select_first=0
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:neocomplete#force_omni_input_patterns.python = '\h\w|[^. \t].\w'
-"let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 "let s:hooks = neobundle#get_hooks("jedi-vim")
 "function! s:hooks.on_source(bundle)
   " jediにvimの設定を任せると'completeopt+=preview'するので
