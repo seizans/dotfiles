@@ -81,11 +81,11 @@ colorscheme hybrid
 "colorscheme jellybeans
 
 " Macの場合はVisualMode時に C-c と C-v でコピー、ペーストできるように
-"let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
-"if s:is_mac
-"    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-"    nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
-"endif
+let s:is_mac = (has('mac') || has('macunix') || has('gui_macvim') || system('uname') =~? '^darwin')
+if s:is_mac
+    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+    nmap <Space><C-v> :call setreg("\"",system("pbpaste"))<CR>p
+endif
 
 set nowritebackup
 set nobackup
