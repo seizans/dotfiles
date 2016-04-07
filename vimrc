@@ -49,6 +49,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 
+NeoBundle 'elixir-lang/vim-elixir'
+
 NeoBundle 'scrooloose/syntastic'
 "let g:syntastic_debug = 1
 let g:syntastic_check_on_open=1

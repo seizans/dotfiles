@@ -19,6 +19,7 @@ repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
+on_ft = ['python']
 
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
@@ -27,6 +28,9 @@ repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'
@@ -41,6 +45,20 @@ repo = 'vim-erlang/vim-erlang-tags'
 repo = 'airblade/vim-rooter'
 
 [[plugins]]
+repo = 'elixir-lang/vim-elixir'
+[[plugins]]
+repo = 'archSeer/elixir.nvim'
+# dein で動かないとのことなので fork (上の) を使っている
+# [[plugins]]
+# repo = 'thinca/vim-ref'
+# [[plugins]]
+# repo = 'awetzel/elixir.nvim'
+# depends = ['elixir-lang/vim-elixir', 'thinca/vim-ref']
+# build = './install.sh'
+#     [autoload]
+#     filetypes = ['elixir']
+
+[[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
     [autoload]
     filetypes = ['python', 'python3', 'djangohtml']
@@ -49,4 +67,4 @@ repo = 'davidhalter/jedi-vim'
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
     [autoload]
-      filetypes = ['python', 'python3', 'djangohtml']
+    filetypes = ['python', 'python3', 'djangohtml']

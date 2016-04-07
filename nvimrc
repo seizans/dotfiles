@@ -7,15 +7,16 @@ let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath^=' . s:dein_repo_dir
 
-if dein#load_state(s:dein_dir)
+" state は必要に感じるまで外す
+"if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   let s:toml = '~/.dein.toml'
   let s:lazy_toml = '~/.dein_lazy.toml'
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#end()
-  call dein#save_state()
-endif
+"  call dein#save_state()
+"endif
 
 " vimprocだけは最初にインストールしてほしい
 if dein#check_install(['vimproc'])
@@ -48,6 +49,12 @@ let g:rooter_silent_chdir = 1
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
+
+"au BufNewFile,BufRead *.ex setf elixir
+"au BufNewFile,BufRead *.exs setf elixir
+"au BufNewFile,BufRead *.eex setf elixir
+"au FileType elixir setlocal errorformat=%f:%l:\ %m
+"let g:syntastic_elixir_checkers = ['vim-elixir']
 
 " "davidhalter/jedi-vim"
 autocmd FileType python setlocal omnifunc=jedi#completions
