@@ -4,3 +4,70 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+[[plugins]]
+repo = 'archSeer/elixir.nvim'
+# dein で動かないとのことなので fork (上の) を使っている
+# [[plugins]]
+# repo = 'thinca/vim-ref'
+# [[plugins]]
+# repo = 'awetzel/elixir.nvim'
+# depends = ['elixir-lang/vim-elixir', 'thinca/vim-ref']
+# build = './install.sh'
+#     [autoload]
+#     filetypes = ['elixir']
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-runtime'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-omnicomplete'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-compiler'
+[[plugins]]
+repo = 'vim-erlang/vim-erlang-tags'
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+    [autoload]
+    filetypes = ['python', 'python3', 'djangohtml']
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+    [autoload]
+    filetypes = ['python', 'python3', 'djangohtml']
