@@ -34,8 +34,8 @@ repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'elixir-lang/vim-elixir'
-[[plugins]]
-repo = 'archSeer/elixir.nvim'
+#[[plugins]]
+#repo = 'archSeer/elixir.nvim'
 # dein で動かないとのことなので fork (上の) を使っている
 # [[plugins]]
 # repo = 'thinca/vim-ref'
