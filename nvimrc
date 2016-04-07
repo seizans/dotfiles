@@ -13,7 +13,9 @@ execute 'set runtimepath^=' . s:dein_repo_dir
   let s:toml = '~/.dein.toml'
   let s:lazy_toml = '~/.dein_lazy.toml'
   call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  " 後で lazy に戻す
+  call dein#load_toml(s:lazy_toml, {'lazy': 0})
+  "call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#end()
 "  call dein#save_state()
 "endif

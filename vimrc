@@ -19,6 +19,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
+NeoBundle 'cespare/vim-toml'
+
 NeoBundle 'Shougo/neocomplete.vim'
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
