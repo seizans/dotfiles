@@ -25,4 +25,5 @@
 [diff]
     compactionHeuristic = true
 [commit]
+    verbose = true
     template = ~/dotfiles/gitmessage.txt
