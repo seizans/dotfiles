@@ -22,5 +22,7 @@
     rebase = true
 [http]
     sslVerify = false
+[diff]
+    compactionHeuristic = true
 [commit]
     template = ~/dotfiles/gitmessage.txt
