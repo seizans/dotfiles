@@ -23,10 +23,6 @@ repo = 'nanotech/jellybeans.vim'
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-on_i = 1
-
-[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
