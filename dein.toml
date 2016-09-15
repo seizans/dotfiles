@@ -43,11 +43,14 @@ repo = 'elixir-lang/vim-elixir'
 #     filetypes = ['elixir']
 
 [[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
-on_ft = ['python']
+on_ft = ['python', 'javascript']
 
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-runtime'
