@@ -78,10 +78,11 @@ NeoBundle 'vim-erlang/vim-erlang-compiler'
 
 NeoBundle 'vim-erlang/vim-erlang-tags'
 
-NeoBundle 'airblade/vim-rooter'
-set tags+=.git/tags,tags
-let g:rooter_autocmd_patterns = '*.erl'
-let g:rooter_silent_chdir = 1
+" いったん vim-rooter 関連は disable する
+" NeoBundle 'airblade/vim-rooter'
+" set tags+=.git/tags,tags
+" let g:rooter_autocmd_patterns = '*.erl'
+" let g:rooter_silent_chdir = 1
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
