@@ -61,8 +61,8 @@ repo = 'vim-erlang/vim-erlang-compiler'
 [[plugins]]
 repo = 'vim-erlang/vim-erlang-tags'
 
-[[plugins]]
-repo = 'airblade/vim-rooter'
+# [[plugins]]
+# repo = 'airblade/vim-rooter'
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
