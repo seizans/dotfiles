@@ -46,6 +46,9 @@ repo = 'elixir-lang/vim-elixir'
 repo = 'pangloss/vim-javascript'
 
 [[plugins]]
+repo = 'vim-ruby/vim-ruby'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]

@@ -41,11 +41,14 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args = '--max-line-length=120'
 
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': ['ruby']}
+let g:syntastic_ruby_checkers = ['rubocop']
+
 " 'vim-erlang/vim-erlang-tags'
 " 'airblade/vim-rooter'
-set tags+=.git/tags,tags
-let g:rooter_autocmd_patterns = '*.erl'
-let g:rooter_silent_chdir = 1
+" set tags+=.git/tags,tags
+" let g:rooter_autocmd_patterns = '*.erl'
+" let g:rooter_silent_chdir = 1
 " erlファイルをerlangとして認識する
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
