@@ -3,24 +3,23 @@ if &compatible
 endif
 
 " dein.vimのディレクトリ
-let s:dein_dir = expand('~/.vim/dein')
+let s:dein_dir = expand('~/.config/nvim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 " state は必要に感じるまで外す
 "if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  let s:toml = '~/.dein.toml'
-  let s:lazy_toml = '~/.dein_lazy.toml'
-  call dein#load_toml(s:toml,      {'lazy': 0})
+  let s:toml = '~/.config/nvim/dein.toml'
+  call dein#load_toml(s:toml, {'lazy': 0})
   call dein#end()
 "  call dein#save_state()
 "endif
 
 " vimprocだけは最初にインストールしてほしい
-if dein#check_install(['vimproc'])
-  call dein#install(['vimproc'])
-endif
+"if dein#check_install(['Shougo/vimproc.vim'])
+  "call dein#install(['Shougo/vimproc.vim'])
+"endif
 " その他インストールしていないものはこちらに入れる
 if dein#check_install()
   call dein#install()
