@@ -29,7 +29,3 @@
 [commit]
     verbose = true
     template = ~/dotfiles/gitmessage.txt
-[pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
