@@ -2,24 +2,25 @@ if &compatible
   set nocompatible
 endif
 
-" dein.vimのディレクトリ
-let s:dein_dir = expand('~/.config/nvim/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-execute 'set runtimepath^=' . s:dein_repo_dir
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
-" state は必要に感じるまで外す
-"if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
   let s:toml = '~/.config/nvim/dein.toml'
   call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#end()
-"  call dein#save_state()
-"endif
 
-" vimprocだけは最初にインストールしてほしい
-"if dein#check_install(['Shougo/vimproc.vim'])
-  "call dein#install(['Shougo/vimproc.vim'])
-"endif
+  call dein#end()
+  call dein#save_state()
+endif
+
+
 " その他インストールしていないものはこちらに入れる
 if dein#check_install()
   call dein#install()
@@ -78,7 +79,7 @@ let g:jedi#auto_vim_configuration = 0
 
 
 filetype plugin indent on
-
+syntax enable
 syntax on
 set title
 set ruler
