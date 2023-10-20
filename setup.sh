@@ -6,7 +6,7 @@ brew install neovim
 mkdir -p ~/.config/nvim/dein
 mkdir -p ~/.config/nvim/colors
 
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 sh ./installer.sh ~/.cache/dein
 
 ln -snvf ~/dotfiles/nvimrc .config/nvim/init.vim
