@@ -28,8 +28,8 @@ endif
 
 " Shougo/deoplete.vim
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#max_list = 20
+call deoplete#custom#option("enable_smart_case", 2)
+call deoplete#custom#option("max_list", 20)
 
 " 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
