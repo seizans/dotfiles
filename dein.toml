@@ -24,7 +24,11 @@ depends = 'neomru.vim'
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
 [[plugins]]
+
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
