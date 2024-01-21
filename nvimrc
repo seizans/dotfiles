@@ -2,34 +2,55 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+" Set dein base path (required)
+let s:dein_base = '~/.cache/dein/'
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
+" Set dein source path (required)
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 
-  let s:toml = '~/.config/nvim/dein.toml'
-  call dein#load_toml(s:toml, {'lazy': 0})
+" Set dein runtime path (required)
+execute 'set runtimepath+=' .. s:dein_src
 
-  call dein#end()
-  call dein#save_state()
-endif
+" Call dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+" call dein#add('roxma/nvim-yarp')
+" call dein#add('roxma/vim-hug-neovim-rpc')
+" call dein#add('w0ng/vim-hybrid')
+let s:toml = '~/.config/nvim/dein.toml'
+call dein#load_toml(s:toml, {'lazy': 0})
+
+" Finish dein initialization (required)
+call dein#end()
+"call dein#save_state()
+
+"if dein#load_state('~/.cache/dein')
+"  call dein#begin('~/.cache/dein')
+"
+"  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+"  "call dein#add('Shougo/deoplete.nvim')
+"  if !has('nvim')
+"    call dein#add('roxma/nvim-yarp')
+"    call dein#add('roxma/vim-hug-neovim-rpc')
+"  endif
+"
+"  let s:toml = '~/.config/nvim/dein.toml'
+"  call dein#load_toml(s:toml, {'lazy': 0})
+"
+"  call dein#end()
+"  call dein#save_state()
+"endif
 
 
-" その他インストールしていないものはこちらに入れる
 if dein#check_install()
   call dein#install()
 endif
 
 " Shougo/deoplete.vim
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option("enable_smart_case", 2)
-call deoplete#custom#option("max_list", 20)
+"let g:deoplete#enable_at_startup = 1
+"call deoplete#custom#option("enable_smart_case", 2)
+"call deoplete#custom#option("max_list", 20)
 
 " 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
